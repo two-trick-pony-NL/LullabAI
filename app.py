@@ -4,12 +4,18 @@ from generator import generator
 
 app = Flask(__name__)
 
+@app.route('/book')
+def book():
+    return render_template('index.html')
+
 @app.route('/', methods=["GET", "POST"])
 def index():
     if flask.request.method == 'POST':
         prompt = request.form['prompt']
         image, text = generator(prompt)
-        return render_template('result.html', title=prompt, image=image, text=text)
+        page1 = text[:len(text)//2]
+        page2 = text[len(text)//2:]
+        return render_template('result.html', title=prompt, image=image, page1=page1, page2=page2)
     
     else:
         prompt = "A dog that wanted to fly"

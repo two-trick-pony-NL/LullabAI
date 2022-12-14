@@ -1,17 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="container">
-    <h1>Write a bedtime story: </h1>
-    <div class="alert alert-info" role="alert">
-      <b>What should your story be about?</b><hr>
-      Tell us what you want your story to be about, and let us worry about the rest! 
-    </div>
+<div class="instruction">Flip the page</div>
+<div class="book">
+  <div class="page cover-front" onclick="movePage(this, 1)">
+    <h1>AI</h1>
+    <h1>Lullaby</h1>
+    <div class="hat"><i class="fab fa-pied-piper-hat"></i></div>
+    
+    <h2>Generate AI bedtime stories</h2>
+    
+  </div>
+  <div class="page cover-front" "></div>
+  <div class="page text-page">
+    <h1>Create your own bedtime story with AI</h1>
+    <p>Welcome to AI Lullaby, the perfect way to end your child's day with a magical adventure! Our AI technology creates unique, personalized bedtime stories just for your child. Simply enter their name and a few details about their interests, and our AI will craft a one-of-a-kind tale that will transport them to a world of imagination and wonder.
+
+      With Bedtime Stories AI, you can say goodbye to repetitive, boring bedtime stories and hello to endless possibilities. Whether your child loves princesses, superheroes, or talking animals, our AI has a story for them. Plus, our stories are never the same twice, so your child can enjoy a new, exciting adventure every night.
+      
+      Don't just settle for the same old bedtime routine – let Bedtime Stories AI spark your child's imagination and make bedtime a fun and exciting experience for the whole family. Try it now and let the magic begin!</p>
+    <h1> Create a personalised story</h1>
+    <p>What should your story be about? </p>
     <form action="/" method="post">
-      <textarea name="prompt" class="form-control" id="textAreaExample2" rows="8"></textarea>
+      <textarea name="prompt" class="form-control" style="width: 100%;"></textarea>
       <br>
       <button type="submit" class="btn btn-dark">Write story!</button>
     </form>
-
   </div>
-  
+
+
+
   {% endblock  %}
