@@ -2,9 +2,8 @@ import openai
 from configparser import ConfigParser
 
 config = ConfigParser()
-config.read('settings.cfg')
+config.read('settings.env')
 token = config.get('DEFAULT', 'openaikey')
-
 
 openai.api_key = token
 
@@ -23,7 +22,7 @@ def generator(input):
     presence_penalty=1
   )
   image_generator = openai.Image.create(
-    prompt=image_prompt,
+    prompt=image_prompt +"cartoon style, cheerful",
     n=1,
     size="256x256"
   )

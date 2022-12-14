@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
   <div class="container">
+    <h1>Write a bedtime story: </h1>
     <div class="alert alert-info" role="alert">
-      Do you want to give your child the gift of a magical bedtime routine? Our AI-powered service writes personalized bedtime stories that will capture your child's imagination and help them drift off into a peaceful night's sleep. Say goodbye to boring bedtime stories and let our AI take your child on a journey of wonder and adventure every night. Try us out today and give your child the gift of a lifetime.
-  
+      <b>What should your story be about?</b><hr>
+      Tell us what you want your story to be about, and let us worry about the rest! 
     </div>
-    <h1>Write me a bedtime story about: </h1>
     <form action="/" method="post">
-      <label for="content">LullabAI writes </label>
       <textarea name="prompt" class="form-control" id="textAreaExample2" rows="8"></textarea>
       <br>
       <button type="submit" class="btn btn-dark">Write story!</button>
